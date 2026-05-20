@@ -1,0 +1,42 @@
+.transfer-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  min-height: 0;
+}
+
+.transfer-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.booking-error-banner {
+  position: absolute;
+  top: var(--spacing-md);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 30;
+  background: rgba(123, 20, 20, 0.94);
+  color: #fff0f0;
+  padding: 10px 14px;
+  border-radius: 999px;
+  box-shadow: var(--shadow-md);
+}
+
+@media (min-width: 900px) {
+  .transfer-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 420px;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .booking-error-banner {
+    top: 18px;
+  }
+}

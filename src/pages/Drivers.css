@@ -1,0 +1,124 @@
+.drivers-page {
+  height: 100%;
+  overflow: auto;
+  padding: var(--spacing-lg);
+  background: linear-gradient(180deg, #f5fafc 0%, #edf4f7 100%);
+}
+
+.drivers-header {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-lg);
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.availability-switch {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: white;
+  border: 1px solid rgba(6, 36, 50, 0.1);
+  border-radius: 999px;
+  padding: 10px 14px;
+}
+
+.driver-section + .driver-section {
+  margin-top: var(--spacing-lg);
+}
+
+.section-heading {
+  margin-bottom: 12px;
+}
+
+.section-heading p {
+  color: #476170;
+}
+
+.driver-requests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.driver-trip-card,
+.empty-card {
+  background: white;
+  border-radius: 22px;
+  border: 1px solid rgba(6, 36, 50, 0.1);
+  padding: 22px;
+  box-shadow: var(--shadow-sm);
+}
+
+.highlighted {
+  background: linear-gradient(180deg, #0b1d26 0%, #133243 100%);
+  color: #e9fbff;
+}
+
+.highlighted h3,
+.highlighted strong,
+.highlighted p {
+  color: inherit;
+}
+
+.trip-heading-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.trip-status {
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.status-buscando-chofer {
+  background: #fff1e3;
+  color: #b35d00;
+}
+
+.status-chofer-asignado {
+  background: #ebf7ef;
+  color: #24754a;
+}
+
+.status-en-camino {
+  background: #fff7e8;
+  color: #996215;
+}
+
+.driver-action-btn {
+  width: 100%;
+  margin-top: 16px;
+  background: linear-gradient(135deg, #ff8a00 0%, #c76500 100%);
+  color: white;
+  font-weight: 700;
+}
+
+.driver-action-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.empty-page {
+  display: grid;
+  place-items: center;
+}
+
+.small {
+  padding: 18px;
+}
+
+@media (max-width: 768px) {
+  .drivers-page {
+    padding: var(--spacing-md);
+  }
+
+  .drivers-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

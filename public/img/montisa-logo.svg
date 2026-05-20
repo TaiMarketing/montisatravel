@@ -1,0 +1,47 @@
+<svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg">
+  <!-- Define gradients -->
+  <defs>
+    <linearGradient id="sunGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF9900;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFB84D;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="waveGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#00A8D8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0078A8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Circle background -->
+  <circle cx="75" cy="75" r="70" fill="url(#sunGradient)" opacity="0.3"/>
+  
+  <!-- Palm tree -->
+  <g transform="translate(75, 45)">
+    <!-- Trunk -->
+    <path d="M -2,0 Q -3,8 -2,15 Q 0,20 2,15 Q 3,8 2,0" fill="#8B6F47"/>
+    <!-- Fronds -->
+    <path d="M -8,-8 Q -12,-15 -15,-20" stroke="#228B22" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M 0,-10 Q 0,-18 0,-25" stroke="#228B22" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M 8,-8 Q 12,-15 15,-20" stroke="#228B22" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M -6,-5 Q -10,-12 -12,-18" stroke="#228B22" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M 6,-5 Q 10,-12 12,-18" stroke="#228B22" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Boat/Ship -->
+  <g transform="translate(75, 85)">
+    <!-- Hull -->
+    <ellipse cx="0" cy="0" rx="35" ry="18" fill="#003D7A"/>
+    <!-- Cabin windows -->
+    <rect x="-18" y="-6" width="7" height="5" fill="#00A8D8" rx="1"/>
+    <rect x="-6" y="-6" width="7" height="5" fill="#00A8D8" rx="1"/>
+    <rect x="6" y="-6" width="7" height="5" fill="#00A8D8" rx="1"/>
+    <!-- Water below -->
+    <path d="M -40,5 Q -25,8 -10,5 Q 5,2 25,6 Q 40,8 45,5" stroke="#00A8D8" stroke-width="2" fill="none"/>
+    <path d="M -40,10 Q -25,12 -10,10 Q 5,8 25,12 Q 40,14 45,10" stroke="#00A8D8" stroke-width="1.5" fill="none" opacity="0.6"/>
+  </g>
+  
+  <!-- Sail/Flag element -->
+  <g transform="translate(75, 60)">
+    <path d="M -2,-15 L 15,-20 L 10,10 Z" fill="#FF9900" opacity="0.8"/>
+    <path d="M 0,-15 L 18,-18 L 12,12 Z" fill="#FFB84D" opacity="0.6"/>
+  </g>
+</svg>

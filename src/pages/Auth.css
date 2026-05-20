@@ -1,0 +1,130 @@
+.auth-page {
+  height: 100%;
+  overflow: auto;
+  display: grid;
+  place-items: center;
+  padding: var(--spacing-lg);
+  background:
+    radial-gradient(circle at top left, rgba(255, 138, 0, 0.2), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(204, 101, 0, 0.2), transparent 30%),
+    #071117;
+}
+
+.auth-card {
+  width: min(100%, 560px);
+  background: rgba(12, 19, 24, 0.94);
+  border: 1px solid rgba(116, 188, 208, 0.22);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
+  color: #ebfbff;
+}
+
+.auth-heading h2 {
+  color: #ffffff;
+  font-size: clamp(28px, 4vw, 38px);
+  margin-bottom: 8px;
+}
+
+.auth-heading p,
+.demo-credentials p,
+.auth-helper {
+  color: #9bc5d1;
+}
+
+.eyebrow {
+  color: #ffb76a;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  margin-bottom: 8px;
+}
+
+.auth-notice {
+  margin-top: 18px;
+  background: rgba(255, 138, 0, 0.12);
+  border: 1px solid rgba(255, 138, 0, 0.22);
+  border-radius: 16px;
+  padding: 12px 14px;
+  color: #ffe2c9;
+}
+
+.auth-switches {
+  display: grid;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.mode-toggle {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.mode-toggle button {
+  background: #101a20;
+  border: 1px solid #1f3944;
+  color: #ffd9b2;
+}
+
+.mode-toggle button.active {
+  background: linear-gradient(135deg, #ff8a00 0%, #ffb347 100%);
+  color: #041117;
+  border-color: transparent;
+}
+
+.auth-form {
+  display: grid;
+  gap: 14px;
+}
+
+.auth-form label {
+  display: grid;
+  gap: 8px;
+  color: #def8ff;
+  font-size: 14px;
+}
+
+.auth-form input {
+  background: #0d151a;
+  color: #effcff;
+  border-color: #24414d;
+}
+
+.auth-error {
+  color: #ff8c8c;
+  font-weight: 600;
+}
+
+.auth-submit {
+  background: linear-gradient(135deg, #ff8a00 0%, #c76500 100%);
+  color: white;
+  font-weight: 700;
+}
+
+.auth-submit:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.demo-credentials {
+  margin-top: 20px;
+  border-top: 1px solid rgba(116, 188, 208, 0.18);
+  padding-top: 16px;
+}
+
+.demo-credentials h3 {
+  color: white;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+  .auth-page {
+    padding: var(--spacing-md);
+  }
+
+  .auth-card {
+    padding: 20px;
+    border-radius: 18px;
+  }
+}

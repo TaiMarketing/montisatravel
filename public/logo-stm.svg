@@ -1,0 +1,31 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Circle background -->
+  <circle cx="100" cy="100" r="95" fill="none" stroke="#00a86b" stroke-width="8"/>
+  
+  <!-- Sky/Palm tree background -->
+  <circle cx="100" cy="70" r="35" fill="#FFD700" opacity="0.3"/>
+  
+  <!-- Palm tree -->
+  <g transform="translate(100, 60)">
+    <line x1="0" y1="5" x2="0" y2="20" stroke="#00a86b" stroke-width="2"/>
+    <path d="M -5,-2 Q -8,-8 -10,-12" stroke="#00a86b" stroke-width="2" fill="none"/>
+    <path d="M 5,-2 Q 8,-8 10,-12" stroke="#00a86b" stroke-width="2" fill="none"/>
+    <path d="M 0,-5 Q -6,-10 -8,-15" stroke="#00a86b" stroke-width="2" fill="none"/>
+    <path d="M 0,-5 Q 6,-10 8,-15" stroke="#00a86b" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- Car -->
+  <g transform="translate(100, 110)">
+    <!-- Car body -->
+    <ellipse cx="0" cy="0" rx="25" ry="12" fill="#003366"/>
+    <!-- Windows -->
+    <rect x="-15" y="-8" width="8" height="6" fill="#ffffff" opacity="0.6" rx="1"/>
+    <rect x="7" y="-8" width="8" height="6" fill="#ffffff" opacity="0.6" rx="1"/>
+    <!-- Wheels -->
+    <circle cx="-12" cy="12" r="4" fill="#333"/>
+    <circle cx="12" cy="12" r="4" fill="#333"/>
+  </g>
+  
+  <!-- Waves at bottom -->
+  <path d="M 60,160 Q 70,155 80,160 T 100,160 T 120,160 T 140,160" stroke="#00a86b" stroke-width="2" fill="none" opacity="0.5"/>
+</svg>

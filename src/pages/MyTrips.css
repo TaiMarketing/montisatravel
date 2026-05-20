@@ -1,0 +1,138 @@
+.my-trips-page {
+  height: 100%;
+  overflow: auto;
+  padding: var(--spacing-lg);
+  background:
+    radial-gradient(circle at top right, rgba(255, 138, 0, 0.12), transparent 30%),
+    radial-gradient(circle at bottom left, rgba(199, 101, 0, 0.12), transparent 28%),
+    #f4f8fb;
+}
+
+.my-trips-header {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-lg);
+  align-items: flex-end;
+  margin-bottom: var(--spacing-lg);
+}
+
+.eyebrow {
+  color: #c76500;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.my-trips-header h2 {
+  font-size: clamp(26px, 3vw, 38px);
+  margin-bottom: 8px;
+}
+
+.new-trip-btn {
+  background: #072635;
+  color: white;
+}
+
+.trips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.trip-card,
+.empty-card {
+  background: white;
+  border-radius: 22px;
+  border: 1px solid rgba(6, 36, 50, 0.1);
+  padding: 22px;
+  box-shadow: var(--shadow-sm);
+}
+
+.empty-page {
+  display: grid;
+  place-items: center;
+}
+
+.trip-top-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.trip-id {
+  color: #c76500;
+  font-weight: 700;
+}
+
+.trip-status {
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.status-pendiente-de-login {
+  background: #eef2f5;
+  color: #476170;
+}
+
+.status-buscando-chofer {
+  background: #fff1e3;
+  color: #b35d00;
+}
+
+.status-chofer-asignado {
+  background: #ebf7ef;
+  color: #24754a;
+}
+
+.status-en-camino {
+  background: #fff7e8;
+  color: #996215;
+}
+
+.status-completada {
+  background: #f1efff;
+  color: #5b44b8;
+}
+
+.trip-destination {
+  color: #476170;
+  margin: 4px 0 14px;
+}
+
+.trip-meta {
+  display: grid;
+  gap: 6px;
+  color: #243a46;
+}
+
+.trip-highlight {
+  margin-top: 14px;
+  background: #fff7ee;
+  border-left: 3px solid #ff8a00;
+  padding: 10px 12px;
+  border-radius: 12px;
+  color: #245163;
+}
+
+.driver-assigned-box {
+  margin-top: 14px;
+  border-radius: 16px;
+  padding: 12px;
+  background: #081820;
+  color: #dcfbff;
+}
+
+@media (max-width: 768px) {
+  .my-trips-page {
+    padding: var(--spacing-md);
+  }
+
+  .my-trips-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
