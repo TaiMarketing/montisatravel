@@ -22,6 +22,13 @@ function App() {
   const [currentUser, setCurrentUser] = useState<AppUser | null>(() => getCurrentUser())
   const [authPrefilledEmail, setAuthPrefilledEmail] = useState('')
   const [authNotice, setAuthNotice] = useState('')
+  const [mainScrolled, setMainScrolled] = useState(false)
+
+  const isScrolled = mainScrolled || currentPage !== 'home'
+
+  const handleMainScroll = (e: React.UIEvent<HTMLElement>) => {
+    setMainScrolled((e.target as HTMLElement).scrollTop > 60)
+  }
 
   const handleNavigate = (page: Page) => {
     if (page === 'reservations' && currentUser?.role !== 'admin') {
@@ -151,8 +158,8 @@ function App() {
 
   return (
     <div className="app-container">
-      <Header currentPage={currentPage} onNavigate={handleNavigate} currentUser={currentUser} onLogout={handleLogout} />
-      <main className="app-main">
+      <Header currentPage={currentPage} onNavigate={handleNavigate} currentUser={currentUser} onLogout={handleLogout} isScrolled={isScrolled} />
+      <main className={`app-main${currentPage !== 'home' ? ' app-main-padded' : ''}`} onScroll={handleMainScroll}>
         {renderPage()}
       </main>
     </div>

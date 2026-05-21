@@ -8,6 +8,9 @@ export const toursSeed: Tour[] = [
     price: 'USD 59',
     image: '/img/fotos-tours/34.png',
     location: 'Punta Cana',
+    rating: 4.8,
+    reviewCount: 312,
+    highlights: ['Catamaran', 'Almuerzo incluido', 'Recogida hotel'],
   },
   {
     id: 'scape-park-hoyo-azul',
@@ -16,6 +19,9 @@ export const toursSeed: Tour[] = [
     price: 'USD 65',
     image: '/img/fotos-tours/35.png',
     location: 'Punta Cana',
+    rating: 4.6,
+    reviewCount: 187,
+    highlights: ['Cenote natural', 'Zip-line', 'Guia especializado'],
   },
   {
     id: 'safari-cultural-dominican',
@@ -24,6 +30,9 @@ export const toursSeed: Tour[] = [
     price: 'USD 55',
     image: '/img/fotos-tours/36.png',
     location: 'Punta Cana',
+    rating: 4.5,
+    reviewCount: 243,
+    highlights: ['Pueblo tipico', 'Degustacion local', 'Todo terreno'],
   },
   {
     id: 'charcos-damajagua',
@@ -32,6 +41,9 @@ export const toursSeed: Tour[] = [
     price: 'USD 69',
     image: '/img/fotos-tours/37.png',
     location: 'Puerto Plata',
+    rating: 4.9,
+    reviewCount: 528,
+    highlights: ['Cascadas naturales', 'Equipo incluido', 'Guia certificado'],
   },
   {
     id: 'centro-historico-malecon',
@@ -40,6 +52,9 @@ export const toursSeed: Tour[] = [
     price: 'USD 45',
     image: '/img/fotos-tours/38.png',
     location: 'Puerto Plata',
+    rating: 4.4,
+    reviewCount: 96,
+    highlights: ['Fortaleza San Felipe', 'Teleférico', 'Ciudad Victorian'],
   },
   {
     id: 'cayo-arena-full-day',
@@ -48,5 +63,8 @@ export const toursSeed: Tour[] = [
     price: 'USD 72',
     image: '/img/fotos-tours/39.png',
     location: 'Puerto Plata',
+    rating: 4.7,
+    reviewCount: 214,
+    highlights: ['Snorkel', 'Almuerzo a bordo', 'Playa virgen'],
   },
 ]

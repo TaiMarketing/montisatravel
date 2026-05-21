@@ -5,4 +5,7 @@ export interface Tour {
   price: string
   image: string
   location: 'Punta Cana' | 'Puerto Plata'
+  rating?: number
+  reviewCount?: number
+  highlights?: string[]
 }

@@ -13,3 +13,9 @@
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
 }
+
+@media (min-width: 641px) {
+  .app-main-padded {
+    padding-top: 110px;
+  }
+}

@@ -8,9 +8,10 @@ interface HeaderProps {
   onNavigate: (page: 'home' | 'transfer' | 'reservations' | 'auth' | 'my-trips' | 'drivers') => void
   currentUser: AppUser | null
   onLogout: () => void
+  isScrolled?: boolean
 }
 
-export default function Header({ currentPage, onNavigate, currentUser, onLogout }: HeaderProps) {
+export default function Header({ currentPage, onNavigate, currentUser, onLogout, isScrolled = false }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const menuRef = useRef<HTMLDivElement>(null)
 
@@ -36,7 +37,7 @@ export default function Header({ currentPage, onNavigate, currentUser, onLogout 
   }
 
   return (
-    <div className="header">
+    <div className={`header${isScrolled ? ' header-scrolled' : ''}`}>
       {currentUser && (
         <div className="user-menu-wrapper user-menu-top-left" ref={menuRef}>
           <button
