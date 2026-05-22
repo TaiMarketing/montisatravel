@@ -16,7 +16,7 @@ interface MapComponentProps {
 }
 
 export default function MapComponent({ origin, destination, onMapClick }: MapComponentProps) {
-  const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY
+  const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY || import.meta.env.VITE_GOOGLE_MAPS_KEY || ''
   const center = useMemo(() => ({ lat: 18.7357, lng: -68.4087 }), [])
 
   const { isLoaded, loadError } = useJsApiLoader({
@@ -27,7 +27,7 @@ export default function MapComponent({ origin, destination, onMapClick }: MapCom
   if (!apiKey) {
     return (
       <div className="map-component-wrapper">
-        <div className="map-status">Falta VITE_GOOGLE_MAPS_API_KEY en el archivo .env</div>
+        <div className="map-status">Falta configurar la API key de Google Maps. Usa VITE_GOOGLE_MAPS_API_KEY (o VITE_GOOGLE_MAPS_KEY) en .env.local.</div>
       </div>
     )
   }
