@@ -20,7 +20,7 @@
   
   /* Typography */
   --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  --font-titles: 'Trebuchet MS', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-titles: Georgia, 'Times New Roman', Times, serif;
   
   /* Spacing */
   --spacing-xs: 4px;
