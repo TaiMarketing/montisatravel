@@ -20,7 +20,7 @@
   
   /* Typography */
   --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  --font-titles: 'MontisaTitulos', 'Segoe UI', Tahoma, sans-serif;
+  --font-titles: 'Trebuchet MS', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   
   /* Spacing */
   --spacing-xs: 4px;
@@ -72,7 +72,7 @@ body {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-primary);
+  font-family: var(--font-titles);
   font-weight: 600;
   color: var(--primary-blue);
 }
