@@ -405,7 +405,9 @@
 
 .catalog-header h2 {
   font-size: clamp(1.4rem, 3vw, 2rem);
+  font-family: var(--font-primary) !important;
   font-weight: 800;
+  letter-spacing: 0.01em;
   color: #1a1a1a;
   margin-bottom: 6px;
 }
@@ -533,6 +535,7 @@
 
 .tour-card-body h3 {
   font-size: 1.05rem;
+  font-family: var(--font-primary) !important;
   font-weight: 700;
   color: #1a1a1a;
   margin-bottom: 8px;
@@ -603,6 +606,7 @@
 
 .transfer-cta-text h3 {
   font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-family: var(--font-primary) !important;
   font-weight: 800;
   color: #fff;
   margin-bottom: 8px;
@@ -653,6 +657,19 @@
   font-size: 1.2rem;
   color: var(--secondary-teal);
   margin-bottom: 4px !important;
+}
+
+.hero-featured-label,
+.catalog-count,
+.tour-location,
+.tour-duration,
+.pickup-badge,
+.tour-rating,
+.tour-review-count,
+.tour-price,
+.transfer-cta-text p,
+.tours-footer p {
+  font-family: var(--font-primary);
 }
 
 .tours-footer p {
