@@ -10,7 +10,7 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
   color: #07222f;
-  padding: var(--spacing-lg);
+  padding: 12px 16px;
   transition: background 0.35s ease, backdrop-filter 0.35s ease, box-shadow 0.35s ease;
 }
 
@@ -65,9 +65,9 @@
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  gap: var(--spacing-lg);
+  gap: 12px;
   position: relative;
-  min-height: 92px;
+  min-height: 58px;
 }
 
 .header-center-logo {
@@ -75,15 +75,18 @@
   align-items: center;
   justify-content: center;
   pointer-events: none;
-  padding: 6px 10px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(7, 34, 47, 0.12);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  width: 68px;
+  height: 68px;
+  padding: 6px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: none;
 }
 
 .logo {
-  height: 72px;
+  max-width: 100%;
+  max-height: 100%;
   width: auto;
   object-fit: contain;
 }
@@ -150,7 +153,7 @@
 }
 
 .nav-button {
-  padding: 10px 16px;
+  padding: 8px 14px;
   border-radius: 999px;
   background: rgba(7, 34, 47, 0.06);
   color: #0a2d3f;
@@ -172,7 +175,7 @@
 
 @media (max-width: 640px) {
   .header {
-    padding: var(--spacing-md);
+    padding: 10px 12px;
   }
 
   .header.on-hero {
@@ -186,9 +189,9 @@
   .header-content {
     flex-direction: column;
     align-items: stretch;
-    padding-top: 74px;
+    padding-top: 58px;
     min-height: 0;
-    gap: var(--spacing-sm);
+    gap: 8px;
     display: flex;
   }
 
@@ -197,10 +200,15 @@
     left: 50%;
     top: 0;
     transform: translateX(-50%);
+    width: 52px;
+    height: 52px;
+    padding: 4px;
+    border-radius: 12px;
   }
 
   .logo {
-    height: 58px;
+    max-width: 100%;
+    max-height: 100%;
   }
 
   .app-title {
@@ -228,23 +236,25 @@
   .nav-button {
     flex: 1;
     text-align: center;
+    padding: 8px 10px;
   }
 }
 
 @media (min-width: 769px) {
   .header {
-    padding: 0 var(--spacing-lg);
+    padding: 10px 18px;
   }
 }
 
 @media (min-width: 900px) {
   .header-content {
     max-width: 1320px;
-    min-height: 104px;
+    min-height: 64px;
   }
 
-  .logo {
-    height: 82px;
+  .header-center-logo {
+    width: 72px;
+    height: 72px;
   }
 
   .header-nav {
