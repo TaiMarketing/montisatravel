@@ -12,7 +12,16 @@ interface HeaderProps {
 
 export default function Header({ currentPage, onNavigate, currentUser, onLogout }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
   const menuRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const mainEl = document.querySelector('.app-main') as HTMLElement | null
+    if (!mainEl) return
+    const handleScroll = () => setIsScrolled(mainEl.scrollTop > 80)
+    mainEl.addEventListener('scroll', handleScroll, { passive: true })
+    return () => mainEl.removeEventListener('scroll', handleScroll)
+  }, [])
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -20,14 +29,8 @@ export default function Header({ currentPage, onNavigate, currentUser, onLogout 
         setIsMenuOpen(false)
       }
     }
-
-    if (isMenuOpen) {
-      document.addEventListener('mousedown', handleClickOutside)
-    }
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
+    if (isMenuOpen) document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [isMenuOpen])
 
   const handleLogout = () => {
@@ -35,10 +38,17 @@ export default function Header({ currentPage, onNavigate, currentUser, onLogout 
     onLogout()
   }
 
+  const isOnHero = currentPage === 'home' && !isScrolled
+  const headerClass = [
+    'header',
+    isOnHero ? 'on-hero' : '',
+    isScrolled ? 'scrolled' : '',
+  ].filter(Boolean).join(' ')
+
   return (
-    <div className="header">
+    <div className={headerClass}>
       {currentUser && (
-        <div className="user-menu-wrapper user-menu-top-left" ref={menuRef}>
+        <div className="user-menu-wrapper user-menu-top-right" ref={menuRef}>
           <button
             type="button"
             className="user-menu-btn"
@@ -49,7 +59,7 @@ export default function Header({ currentPage, onNavigate, currentUser, onLogout 
           </button>
 
           {isMenuOpen && (
-            <div className="user-dropdown user-dropdown-top-left">
+            <div className="user-dropdown user-dropdown-top-right">
               <div className="user-dropdown-header">
                 <p className="user-dropdown-name">{currentUser.name}</p>
                 <p className="user-dropdown-role">
@@ -71,14 +81,14 @@ export default function Header({ currentPage, onNavigate, currentUser, onLogout 
 
               <button type="button" className="dropdown-item">
                 <HelpCircle size={18} />
-                <span>Atención al cliente</span>
+                <span>Atencion al cliente</span>
               </button>
 
               <div className="user-dropdown-divider" />
 
               <button type="button" className="dropdown-item logout" onClick={handleLogout}>
                 <LogOut size={18} />
-                <span>Cerrar sesión</span>
+                <span>Cerrar sesion</span>
               </button>
             </div>
           )}

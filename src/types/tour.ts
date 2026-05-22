@@ -5,4 +5,8 @@ export interface Tour {
   price: string
   image: string
   location: 'Punta Cana' | 'Puerto Plata'
+  rating?: number
+  reviewCount?: number
+  category?: 'excursion' | 'aventura' | 'cultura' | 'naturaleza'
+  pickup?: boolean
 }

@@ -152,7 +152,7 @@ function App() {
   return (
     <div className="app-container">
       <Header currentPage={currentPage} onNavigate={handleNavigate} currentUser={currentUser} onLogout={handleLogout} />
-      <main className="app-main">
+      <main className={`app-main${currentPage !== 'home' ? ' app-main--padded' : ''}`}>
         {renderPage()}
       </main>
     </div>

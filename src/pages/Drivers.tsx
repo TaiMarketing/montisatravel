@@ -116,7 +116,7 @@ export default function Drivers({ user, onNavigateAuth, onUserUpdated }: Drivers
 
       {!activeTrip && (
         <div className="empty-card small">
-          <p>No tienes viajes asignados en este momento. El administrador te asignará reservas.</p>
+          <p>No tienes viajes asignados en este momento. El administrador te asignara reservas.</p>
         </div>
       )}
     </section>

@@ -20,8 +20,8 @@ interface LocationPanelProps {
 
 // Mock hotel data for Punta Cana
 const HOTELS_PUNTA_CANA = [
-  { name: 'Barceló Bávaro Palace', lat: 18.7417, lng: -68.3867 },
-  { name: 'Meliá Caribe Tropical', lat: 18.7487, lng: -68.3937 },
+  { name: 'Barcelo Bavaro Palace', lat: 18.7417, lng: -68.3867 },
+  { name: 'Melia Caribe Tropical', lat: 18.7487, lng: -68.3937 },
   { name: 'Hard Rock Hotel Punta Cana', lat: 18.7367, lng: -68.4067 },
   { name: 'Palladium Hotel Group', lat: 18.7457, lng: -68.3867 },
   { name: 'Grand Palladium', lat: 18.7527, lng: -68.3927 },
@@ -140,7 +140,7 @@ export default function LocationPanel({
             <div className="input-wrapper">
               <input
                 type="text"
-                placeholder="Selecciona tu ubicación..."
+                placeholder="Selecciona tu ubicacion..."
                 value={originSearch}
                 onChange={(e) => {
                   setOriginSearch(e.target.value)
@@ -193,7 +193,7 @@ export default function LocationPanel({
             <div className="input-wrapper">
               <input
                 type="text"
-                placeholder="¿Dónde vas?"
+                placeholder="Donde vas?"
                 value={destinationSearch}
                 onChange={(e) => {
                   setDestinationSearch(e.target.value)
@@ -260,7 +260,7 @@ export default function LocationPanel({
             }}
             disabled={!isReadyToRequest}
           >
-            {isReadyToRequest ? 'Ver Estimación' : 'Completa ambas ubicaciones'}
+            {isReadyToRequest ? 'Ver Estimacion' : 'Completa ambas ubicaciones'}
           </button>
 
           {isReadyToRequest && (

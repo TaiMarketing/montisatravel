@@ -71,7 +71,7 @@ export default function RideEstimation({
       </button>
 
       <div className="estimation-content">
-        <h2 className="estimation-title">Estimación del Viaje</h2>
+        <h2 className="estimation-title">Estimacion del Viaje</h2>
 
         {/* Route Info */}
         <div className="route-info">
@@ -129,7 +129,7 @@ export default function RideEstimation({
 
         {/* Note */}
         <div className="estimation-note">
-          <p>* Los precios son estimados y pueden variar según el tráfico y disponibilidad.</p>
+          <p>* Los precios son estimados y pueden variar segun el trafico y disponibilidad.</p>
         </div>
 
         <div className="booking-form">

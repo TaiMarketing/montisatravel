@@ -1,10 +1,62 @@
 .header {
-  background: linear-gradient(180deg, #ffffff 0%, #f5fbff 100%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
   color: #07222f;
   padding: var(--spacing-lg);
-  box-shadow: var(--shadow-md);
-  position: relative;
-  z-index: 10;
+  transition: background 0.35s ease, backdrop-filter 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Transparent when over the hero */
+.header.on-hero {
+  background: rgba(10, 10, 10, 0.18);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: none;
+}
+
+.header.on-hero .nav-button {
+  color: rgba(255, 255, 255, 0.92);
+  border-color: rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.header.on-hero .nav-button:hover {
+  background: rgba(255, 138, 0, 0.35);
+  border-color: rgba(255, 138, 0, 0.6);
+  color: #fff;
+}
+
+.header.on-hero .nav-button.active {
+  background: var(--secondary-teal);
+  color: #fff;
+  border-color: var(--secondary-teal);
+}
+
+.header.on-hero .user-menu-btn {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.header.on-hero .header-center-logo {
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.header.scrolled {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .header-content {
@@ -171,6 +223,12 @@
   }
 }
 
+@media (min-width: 769px) {
+  .header {
+    padding: 0 var(--spacing-lg);
+  }
+}
+
 @media (min-width: 900px) {
   .header-content {
     max-width: 1320px;
@@ -189,9 +247,9 @@
     min-width: 116px;
   }
 
-  .user-menu-wrapper.user-menu-top-left {
+  .user-menu-wrapper.user-menu-top-right {
     top: 18px;
-    left: 20px;
+    right: 20px;
   }
 }
 
@@ -200,11 +258,11 @@
   position: relative;
 }
 
-.user-menu-wrapper.user-menu-top-left {
+.user-menu-wrapper.user-menu-top-right {
   position: fixed;
   top: var(--spacing-lg);
-  left: var(--spacing-lg);
-  z-index: 100;
+  right: var(--spacing-lg);
+  z-index: 1100;
 }
 
 .user-menu-btn {
@@ -239,10 +297,10 @@
   animation: dropdownSlide 0.2s ease-out;
 }
 
-.user-dropdown.user-dropdown-top-left {
+.user-dropdown.user-dropdown-top-right {
   top: 100%;
-  left: 0;
-  right: auto;
+  right: 0;
+  left: auto;
 }
 
 @keyframes dropdownSlide {
