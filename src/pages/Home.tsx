@@ -23,11 +23,19 @@ const PLACEHOLDERS = [
   'Isla Saona, Charcos, Safari...',
 ]
 
+const HERO_IMAGES = [
+  '/img/montisa-travel-index-background.jpg',
+  '/img/fotos-tours/34.png',
+  '/img/fotos-tours/36.png',
+  '/img/fotos-tours/39.png',
+]
+
 export default function Home({ onNavigateTransfer, onOpenTour }: HomeProps) {
   const [searchQuery, setSearchQuery] = useState('')
   const [activeCategory, setActiveCategory] = useState<string | null>(null)
   const [showSuggestions, setShowSuggestions] = useState(false)
   const [placeholderIdx, setPlaceholderIdx] = useState(0)
+  const [activeHeroImageIdx, setActiveHeroImageIdx] = useState(0)
   const searchRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -45,6 +53,14 @@ export default function Home({ onNavigateTransfer, onOpenTour }: HomeProps) {
     }
     document.addEventListener('mousedown', handleClick)
     return () => document.removeEventListener('mousedown', handleClick)
+  }, [])
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveHeroImageIdx((idx) => (idx + 1) % HERO_IMAGES.length)
+    }, 4500)
+
+    return () => clearInterval(timer)
   }, [])
 
   const suggestions =
@@ -86,6 +102,15 @@ export default function Home({ onNavigateTransfer, onOpenTour }: HomeProps) {
     <div className="tours-page">
       {/* ── HERO ── */}
       <section className="tours-hero">
+        <div className="tours-hero-backgrounds" aria-hidden="true">
+          {HERO_IMAGES.map((image, idx) => (
+            <div
+              key={image}
+              className={`tours-hero-bg${idx === activeHeroImageIdx ? ' is-active' : ''}`}
+              style={{ backgroundImage: `url('${image}')` }}
+            />
+          ))}
+        </div>
         <div className="tours-overlay" />
         <div className="tours-hero-content">
           <p className="tours-kicker">🌴 Punta Cana · Puerto Plata · Republica Dominicana</p>
