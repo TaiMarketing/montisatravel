@@ -139,7 +139,7 @@
 
 .itinerary-grid {
   display: grid;
-  grid-template-columns: 280px minmax(0, 1fr);
+  grid-template-columns: 1fr;
   gap: 14px;
 }
 
@@ -166,26 +166,6 @@
   border-radius: 50%;
   background: #ff6f2c;
   flex-shrink: 0;
-}
-
-.itinerary-map {
-  background: #fff;
-  border-radius: 14px;
-  border: 1px solid #dde5ef;
-  overflow: hidden;
-}
-
-.itinerary-map img {
-  width: 100%;
-  height: 330px;
-  object-fit: cover;
-}
-
-.itinerary-map a {
-  display: block;
-  padding: 12px 14px;
-  font-weight: 700;
-  color: #1c3c66;
 }
 
 .related-grid {

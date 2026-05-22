@@ -199,10 +199,6 @@ export default function TourDetails({ tour, onBack, onNavigateTransfer, onOpenTo
                 <li><span />Main activity and free time</li>
                 <li><span />Return transfer</li>
               </ol>
-              <div className="itinerary-map">
-                <img src={details.gallery[1]} alt="Itinerary map preview" />
-                <a href="https://maps.google.com" target="_blank" rel="noreferrer">Open map</a>
-              </div>
             </div>
           </section>
 

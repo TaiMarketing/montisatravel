@@ -38,6 +38,15 @@ export default function Header({ currentPage, onNavigate, currentUser, onLogout 
     onLogout()
   }
 
+  const handleCloseMenu = () => {
+    setIsMenuOpen(false)
+  }
+
+  const handleNavigate = (page: 'home' | 'transfer' | 'reservations' | 'auth' | 'my-trips' | 'drivers') => {
+    setIsMenuOpen(false)
+    onNavigate(page)
+  }
+
   const isOnHero = currentPage === 'home' && !isScrolled
   const headerClass = [
     'header',
@@ -47,111 +56,86 @@ export default function Header({ currentPage, onNavigate, currentUser, onLogout 
 
   return (
     <div className={headerClass}>
-      {currentUser && (
-        <div className="user-menu-wrapper user-menu-top-right" ref={menuRef}>
-          <button
-            type="button"
-            className="user-menu-btn"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Abrir menu de usuario"
-          >
-            <UserCircle size={24} />
-          </button>
-
-          {isMenuOpen && (
-            <div className="user-dropdown user-dropdown-top-right">
-              <div className="user-dropdown-header">
-                <p className="user-dropdown-name">{currentUser.name}</p>
-                <p className="user-dropdown-role">
-                  {currentUser.role === 'driver' ? 'Chofer' : currentUser.role === 'admin' ? 'Admin' : 'Cliente'}
-                </p>
-              </div>
-
-              <div className="user-dropdown-divider" />
-
-              <button type="button" className="dropdown-item">
-                <UserCircle size={18} />
-                <span>Perfil</span>
-              </button>
-
-              <button type="button" className="dropdown-item">
-                <Settings size={18} />
-                <span>Ajustes</span>
-              </button>
-
-              <button type="button" className="dropdown-item">
-                <HelpCircle size={18} />
-                <span>Atencion al cliente</span>
-              </button>
-
-              <div className="user-dropdown-divider" />
-
-              <button type="button" className="dropdown-item logout" onClick={handleLogout}>
-                <LogOut size={18} />
-                <span>Cerrar sesion</span>
-              </button>
-            </div>
-          )}
-        </div>
-      )}
       <div className="header-content">
         <div className="header-center-logo" aria-hidden="true">
           <img src="/img/logo-transparente.png" alt="Montisa Travel" className="logo" />
         </div>
 
-        <nav className="header-nav" aria-label="Navegacion principal">
+        <div className="user-menu-wrapper user-menu-top-right" ref={menuRef}>
           <button
             type="button"
-            className={`nav-button ${currentPage === 'home' ? 'active' : ''}`}
-            onClick={() => onNavigate('home')}
+            className="user-menu-btn"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Abrir menu de perfil"
           >
-            Inicio
+            <UserCircle size={20} />
+            <span>{currentUser ? 'Perfil' : 'Menu'}</span>
           </button>
-          <button
-            type="button"
-            className={`nav-button ${currentPage === 'transfer' ? 'active' : ''}`}
-            onClick={() => onNavigate('transfer')}
-          >
-            Transfer
-          </button>
-          {currentUser?.role === 'admin' && (
-            <button
-              type="button"
-              className={`nav-button ${currentPage === 'reservations' ? 'active' : ''}`}
-              onClick={() => onNavigate('reservations')}
-            >
-              Reservas
-            </button>
-          )}
-          {currentUser && (
-            <button
-              type="button"
-              className={`nav-button ${currentPage === 'my-trips' ? 'active' : ''}`}
-              onClick={() => onNavigate('my-trips')}
-            >
-              Mis viajes
-            </button>
-          )}
-          {currentUser?.role === 'admin' && (
-            <button
-              type="button"
-              className={`nav-button ${currentPage === 'drivers' ? 'active' : ''}`}
-              onClick={() => onNavigate('drivers')}
-            >
-              Choferes
-            </button>
-          )}
-        </nav>
 
-        <div className="session-box">
-          {!currentUser && (
-            <button
-              type="button"
-              className={`nav-button ${currentPage === 'auth' ? 'active' : ''}`}
-              onClick={() => onNavigate('auth')}
-            >
-              Iniciar sesion
-            </button>
+          {isMenuOpen && (
+            <div className="user-dropdown user-dropdown-top-right">
+              {currentUser && (
+                <div className="user-dropdown-header">
+                  <p className="user-dropdown-name">{currentUser.name}</p>
+                  <p className="user-dropdown-role">
+                    {currentUser.role === 'driver' ? 'Chofer' : currentUser.role === 'admin' ? 'Admin' : 'Cliente'}
+                  </p>
+                </div>
+              )}
+
+              <div className="user-dropdown-divider" />
+
+              <button type="button" className={`dropdown-item ${currentPage === 'home' ? 'active' : ''}`} onClick={() => handleNavigate('home')}>
+                <span>Inicio</span>
+              </button>
+
+              <button type="button" className={`dropdown-item ${currentPage === 'transfer' ? 'active' : ''}`} onClick={() => handleNavigate('transfer')}>
+                <span>Transfer</span>
+              </button>
+
+              {currentUser?.role === 'admin' && (
+                <button type="button" className={`dropdown-item ${currentPage === 'reservations' ? 'active' : ''}`} onClick={() => handleNavigate('reservations')}>
+                  <span>Reservas</span>
+                </button>
+              )}
+
+              {currentUser && (
+                <button type="button" className={`dropdown-item ${currentPage === 'my-trips' ? 'active' : ''}`} onClick={() => handleNavigate('my-trips')}>
+                  <span>Mis viajes</span>
+                </button>
+              )}
+
+              {currentUser?.role === 'admin' && (
+                <button type="button" className={`dropdown-item ${currentPage === 'drivers' ? 'active' : ''}`} onClick={() => handleNavigate('drivers')}>
+                  <span>Choferes</span>
+                </button>
+              )}
+
+              {!currentUser && (
+                <button type="button" className={`dropdown-item ${currentPage === 'auth' ? 'active' : ''}`} onClick={() => handleNavigate('auth')}>
+                  <span>Iniciar sesion</span>
+                </button>
+              )}
+
+              <div className="user-dropdown-divider" />
+
+              <button type="button" className="dropdown-item" onClick={handleCloseMenu}>
+                <Settings size={18} />
+                <span>Ajustes</span>
+              </button>
+
+              <button type="button" className="dropdown-item" onClick={handleCloseMenu}>
+                <HelpCircle size={18} />
+                <span>Atencion al cliente</span>
+              </button>
+
+              {currentUser && (
+                <button type="button" className="dropdown-item logout" onClick={handleLogout}>
+                  <LogOut size={18} />
+                  <span>Cerrar sesion</span>
+                </button>
+              )}
+            </div>
           )}
         </div>
       </div>

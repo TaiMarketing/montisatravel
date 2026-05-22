@@ -187,12 +187,7 @@
   }
 
   .header-content {
-    flex-direction: column;
-    align-items: stretch;
-    padding-top: 58px;
-    min-height: 0;
-    gap: 8px;
-    display: flex;
+    min-height: 50px;
   }
 
   .header-center-logo {
@@ -219,24 +214,9 @@
     font-size: 11px;
   }
 
-  .header-nav {
-    width: 100%;
-    margin-top: 10px;
-  }
-
-  .session-box {
-    width: 100%;
-    justify-content: flex-end;
-  }
-
-  .session-copy {
-    text-align: left;
-  }
-
-  .nav-button {
-    flex: 1;
-    text-align: center;
-    padding: 8px 10px;
+  .user-menu-wrapper.user-menu-top-right {
+    top: 10px;
+    right: 10px;
   }
 }
 
@@ -249,20 +229,12 @@
 @media (min-width: 900px) {
   .header-content {
     max-width: 1320px;
-    min-height: 64px;
+    min-height: 58px;
   }
 
   .header-center-logo {
     width: 72px;
     height: 72px;
-  }
-
-  .header-nav {
-    gap: 10px;
-  }
-
-  .nav-button {
-    min-width: 116px;
   }
 
   .user-menu-wrapper.user-menu-top-right {
@@ -284,21 +256,28 @@
 }
 
 .user-menu-btn {
-  background: none;
-  border: none;
-  color: var(--secondary-teal);
+  background: rgba(7, 34, 47, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #fff;
   cursor: pointer;
-  padding: 8px;
+  padding: 10px 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
+  gap: 8px;
+  border-radius: 999px;
   transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
 .user-menu-btn:hover {
-  background: rgba(255, 138, 0, 0.15);
-  color: var(--primary-blue);
+  background: rgba(255, 138, 0, 0.2);
+  color: #fff;
+}
+
+.user-menu-btn span {
+  font-size: 13px;
+  font-weight: 700;
 }
 
 .user-dropdown {
@@ -309,7 +288,7 @@
   border: 1px solid #1f3944;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
-  width: 220px;
+  width: 260px;
   z-index: 100;
   overflow: hidden;
   animation: dropdownSlide 0.2s ease-out;
@@ -374,6 +353,12 @@
 .dropdown-item:hover {
   background: rgba(255, 138, 0, 0.12);
   color: var(--primary-blue);
+}
+
+.dropdown-item.active {
+  background: rgba(255, 138, 0, 0.18);
+  color: #fff;
+  font-weight: 700;
 }
 
 .dropdown-item.logout {
